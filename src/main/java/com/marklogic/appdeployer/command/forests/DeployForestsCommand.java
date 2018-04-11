@@ -19,10 +19,10 @@ import java.util.Set;
 
 /**
  * This command is for a simple use case where all the forests created for a database have the same structure,
- * but possibly exist on different forests. For more precise control over how forests are created, please see
+ * but possibly exist on different hosts. For more precise control over how forests are created, please see
  * DeployCustomForestsCommand.
  *
- * Doesn't yet support deleting forests - currently assumed that this will be done by deleting a database.
+ * Doesn't yet support deleting forests - currently assumes that this will be done by deleting a database.
  */
 public class DeployForestsCommand extends AbstractCommand {
 
