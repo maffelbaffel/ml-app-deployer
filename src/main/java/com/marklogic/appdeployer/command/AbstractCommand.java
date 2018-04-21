@@ -2,8 +2,8 @@ package com.marklogic.appdeployer.command;
 
 import com.marklogic.client.ext.helper.LoggingObject;
 import com.marklogic.mgmt.PayloadParser;
-import com.marklogic.mgmt.resource.ResourceManager;
 import com.marklogic.mgmt.SaveReceipt;
+import com.marklogic.mgmt.resource.ResourceManager;
 import org.springframework.util.FileCopyUtils;
 
 import java.io.File;
@@ -12,7 +12,6 @@ import java.io.IOException;
 import java.net.URI;
 import java.util.Arrays;
 import java.util.HashSet;
-import java.util.Map;
 import java.util.Set;
 import java.util.regex.Pattern;
 
@@ -104,7 +103,7 @@ public abstract class AbstractCommand extends LoggingObject implements Command {
      */
     protected String copyFileToString(File f) {
         try {
-            return new String(FileCopyUtils.copyToByteArray(f));
+            return new String(FileCopyUtils.copyToByteArray(f.getAbsoluteFile()));
         } catch (IOException ie) {
             throw new RuntimeException(
                     "Unable to copy file to string from path: " + f.getAbsolutePath() + "; cause: " + ie.getMessage(),
